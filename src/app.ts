@@ -5,10 +5,13 @@ import path from "path";
 import "dotenv/config";
 
 import { mongooseClient } from "./config/dbConfig";
+import { task } from "./utils/updateStats";
 
 const app: Application = express();
 
 mongooseClient;
+
+task.start();
 
 app.use(
   cors({
