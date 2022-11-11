@@ -5,13 +5,13 @@ import path from "path";
 import "dotenv/config";
 
 import { mongooseClient } from "./config/dbConfig";
-import { task } from "./utils/updateStats";
+
+import authRouter from "./routes/authRouter";
+import statsRouter from "./routes/statsRouter";
 
 const app: Application = express();
 
 mongooseClient;
-
-task.start();
 
 app.use(
   cors({
@@ -21,6 +21,9 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
+
+app.use("/api/auth", authRouter);
+app.use("/api/statistics", statsRouter)
 
 app.use(express.static(path.join(__dirname, "../client/build")));
 

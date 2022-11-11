@@ -25,7 +25,7 @@ const statisticSchema = new Schema({
     type: Number,
     required: true
   },
-  death: {
+  deaths: {
     type: Number,
     required: true
   },
@@ -39,7 +39,7 @@ const statisticSchema = new Schema({
   }
 }, { _id: false });
 
-const Statistic = mongoose.model("Countries", statisticSchema);
+const Statistic = mongoose.model("Statistics", statisticSchema);
 
 export {
   Statistic
