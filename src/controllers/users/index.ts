@@ -4,7 +4,7 @@ import { User } from "../../models/user";
 import { generateAccessToken, generateRefreshToken } from "../../middleware/auth";
 
 export const getUser = async (req: Request, res: Response) => {
-
+  // Might be usefull in the future
 }
 
 export const registerUser = async (req: Request, res: Response) => {
